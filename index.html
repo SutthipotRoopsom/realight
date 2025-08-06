@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Check Classifier</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.7.4/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.4/dist/teachablemachine-image.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Light Check Classifier</h1>
+        <p>อัปโหลดภาพเพื่อตรวจสอบสภาพแสง</p>
+        
+        <div class="upload-container">
+            <input type="file" id="imageUpload" accept="image/*">
+            <label for="imageUpload" class="upload-btn">เลือกไฟล์ภาพ</label>
+        </div>
+        
+        <div class="preview-container">
+            <img id="imagePreview" src="#" alt="Image Preview" style="display: none;">
+        </div>
+        
+        <div class="result-container">
+            <h2>ผลลัพธ์การจำแนก:</h2>
+            <div id="predictionResults"></div>
+        </div>
+        
+        <div class="webcam-container" style="display: none;">
+            <button id="webcamBtn" class="webcam-btn">เปิดกล้อง</button>
+            <video id="webcam" autoplay playsinline></video>
+            <button id="captureBtn" class="capture-btn" style="display: none;">ถ่ายภาพ</button>
+        </div>
+        
+        <button id="toggleWebcamBtn" class="toggle-webcam-btn">ใช้กล้องแทน</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

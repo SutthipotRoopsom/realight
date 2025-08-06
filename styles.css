@@ -1,0 +1,332 @@
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  --accent-color: #4895ef;
+  --success-color: #4cc9f0;
+  --text-color: #2b2d42;
+  --light-text: #f8f9fa;
+  --background-color: #f8f9fa;
+  --card-bg: #ffffff;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 25px;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+p.description {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+/* Upload Section */
+.upload-section {
+  margin-bottom: 30px;
+}
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.upload-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  border: none;
+  font-size: 1rem;
+}
+
+.upload-btn:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+input[type="file"] {
+  display: none;
+}
+
+/* Preview Section */
+.preview-container {
+  text-align: center;
+  margin: 25px 0;
+}
+
+#imagePreview {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: var(--border-radius);
+  border: 2px dashed #ddd;
+  padding: 10px;
+  object-fit: contain;
+  background-color: #f9f9f9;
+}
+
+/* Results Section */
+.result-container {
+  margin-top: 30px;
+}
+
+.result-container h2 {
+  margin-bottom: 15px;
+  color: var(--primary-color);
+  font-size: 1.4rem;
+}
+
+.result-item {
+  margin-bottom: 15px;
+  background-color: #f5f7ff;
+  padding: 15px;
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.probability {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.bar-container {
+  width: 100%;
+  height: 12px;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-color), var(--success-color));
+  border-radius: 6px;
+  transition: width 0.5s ease-out;
+}
+
+/* Webcam Section */
+.webcam-section {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+#webcam {
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--border-radius);
+  border: 2px solid #ddd;
+  background-color: #000;
+}
+
+.btn {
+  padding: 12px 24px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.btn.secondary {
+  background-color: #6c757d;
+}
+
+.btn.secondary:hover {
+  background-color: #5a6268;
+}
+
+.btn.accent {
+  background-color: var(--accent-color);
+}
+
+.btn.accent:hover {
+  background-color: #3a7bd5;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  margin: 20px auto;
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+  
+  .container {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  .result-item {
+    padding: 12px;
+  }
+  
+  .btn, .upload-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+  
+  h1 {
+    font-size: 1.3rem;
+  }
+  
+  p.description {
+    font-size: 0.9rem;
+  }
+  
+  .result-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .probability {
+    align-self: flex-end;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.result-item {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Loading State */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Webcam Button Container */
+.webcam-btn-container {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.webcam-btn-container .btn {
+  flex: 1;
+  padding: 10px;
+}
+
+.toggle-webcam-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.webcam-btn{
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.capture-btn {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
